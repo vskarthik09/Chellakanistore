@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHELLAKANI STORE | Vanapuram</title>
+<meta name="description" content="Chellakani Store - Grocery Store at Thachempattu Road, Vanapuram, Tamil Nadu 606753.">
+<style>
+:root{--primary:#00aeb5;--secondary:#ffb323;--dark:#132c35;--light:#f3fbfc;--white:#fff;--muted:#526a70;--shadow:0 16px 36px rgba(0,91,105,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--light);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:0}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 15px rgba(0,0,0,.07)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.15rem;color:var(--primary)}
+.logo-icon{width:43px;height:43px;border-radius:13px;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:22px}
+.nav-links{display:flex;gap:25px;font-weight:700}
+.nav-links a:hover{color:var(--primary)}
+.menu-btn{display:none;background:var(--primary);color:#fff;padding:9px 12px;border-radius:9px}
+.hero{background:linear-gradient(135deg,#e9f8ed,#fff8df);padding:75px 0 65px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;padding:8px 14px;border-radius:999px;box-shadow:var(--shadow);font-weight:800;color:var(--primary);margin-bottom:18px}
+h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.03;margin-bottom:20px}
+h1 span{color:var(--primary)}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:13px 20px;border-radius:12px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{background:#fff;border:1px solid #dbe6de}
+.store-card{background:#fff;border-radius:28px;padding:30px;box-shadow:0 25px 60px rgba(23,107,58,.16);text-align:center}
+.store-emoji{font-size:100px;margin:10px}
+.rating{font-size:1.2rem;font-weight:900;color:#d88d00}
+.rating span{color:#555;font-size:.95rem;font-weight:600}
+section{padding:72px 0}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:2.2rem;margin-bottom:8px}
+.section-title p{color:var(--muted)}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.info{background:#fff;padding:24px;border-radius:18px;box-shadow:var(--shadow)}
+.info-icon{font-size:30px;margin-bottom:10px}
+.info h3{font-size:1rem;margin-bottom:5px}.info p{color:var(--muted);font-size:.94rem}
+.products{background:#fff}
+.search-box{max-width:650px;margin:0 auto 30px;position:relative}
+.search-box input{width:100%;padding:16px 20px;border:1px solid #d8e3dc;border-radius:14px;outline:none;font-size:1rem}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:var(--light);border:1px solid #e2ebe5;border-radius:18px;padding:18px;transition:.2s}
+.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-img{height:130px;border-radius:14px;background:#fff;display:grid;place-items:center;font-size:58px;margin-bottom:14px}
+.product h3{margin-bottom:5px}.product p{color:var(--muted);font-size:.9rem}
+.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.price{font-weight:900;color:var(--primary)}
+.add{background:var(--primary);color:#fff;border-radius:9px;padding:8px 12px;font-weight:800}
+.reviews{background:#edf7f0}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.review{background:#fff;padding:25px;border-radius:18px;box-shadow:var(--shadow)}
+.stars{color:#f3ae00;letter-spacing:2px;margin-bottom:8px}
+.review p{color:#4f5d55}.review strong{display:block;margin-top:12px}
+.location-card{display:grid;grid-template-columns:1fr 1fr;gap:25px;text-align: center;}
+.address{background:var(--dark);color:#fff;padding:35px;border-radius:24px}
+.address p{color:#d2ddd6;margin:10px 0 20px; text-align: center;}
+.map{min-height:300px;border-radius:24px;background:linear-gradient(135deg,#d9eadf,#c6dfcc);display:grid;place-items:center;text-align:center;padding:25px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery-item{height:230px;border-radius:20px;background:linear-gradient(135deg,#dfeee3,#fff2c7);display:grid;place-items:center;font-size:65px;box-shadow:var(--shadow)}
+footer{background:#0c1d13;color:#dbe8df;padding:38px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:25px;align-items:center}
+footer strong{color:#fff;font-size:1.2rem}
+.cart{position:fixed;right:22px;bottom:22px;z-index:1100;background:var(--secondary);color:#1e260e;padding:15px 18px;border-radius:999px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.cart-count{background:#111;color:#fff;padding:2px 7px;border-radius:50%;margin-left:5px}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,120px);background:#10251a;color:#fff;padding:13px 20px;border-radius:10px;z-index:2000;transition:.3s}
+.toast.show{transform:translate(-50%,0)}
+@media(max-width:900px){.hero-grid,.location-card{grid-template-columns:1fr}.info-grid{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;box-shadow:0 10px 20px #0001}.nav-links.open{display:flex}.menu-btn{display:block}.info-grid,.product-grid,.review-grid,.gallery{grid-template-columns:1fr 1fr}.gallery-item{height:170px}.footer-grid{flex-direction:column;align-items:flex-start}}
+@media(max-width:450px){.info-grid,.product-grid,.review-grid,.gallery{grid-template-columns:1fr}h1{font-size:2.7rem}}
+
+/* Premium loading, 3D and scroll animations */
+#page-loader{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:radial-gradient(circle at top right,#fff3c6,#e4f7e9 45%,#fff);transition:opacity .65s ease,visibility .65s ease}
+#page-loader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{text-align:center;padding:28px}
+.loader-basket{width:92px;height:92px;margin:0 auto 18px;border-radius:26px;background:linear-gradient(145deg,#20b45b,#087638);display:grid;place-items:center;font-size:45px;color:#fff;box-shadow:0 18px 35px #159c4d40;animation:loaderFloat 1.4s ease-in-out infinite,loaderSpin 3s ease-in-out infinite}
+.loader-title{font-size:clamp(1.25rem,4vw,1.8rem);font-weight:900;color:var(--dark);letter-spacing:.04em}
+.loader-sub{color:var(--muted);margin-top:5px}
+.loader-track{width:180px;height:5px;background:#d6e8da;border-radius:99px;overflow:hidden;margin:20px auto 0}
+.loader-track span{display:block;height:100%;width:35%;background:var(--secondary);border-radius:99px;animation:loadProgress 1.2s ease-in-out infinite}
+@keyframes loadProgress{from{transform:translateX(-110%)}to{transform:translateX(390%)}}
+@keyframes loaderFloat{50%{transform:translateY(-8px) rotate(-3deg)}}
+@keyframes loaderSpin{0%,100%{border-radius:26px}50%{border-radius:50%}}
+.hero{position:relative}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(1px);opacity:.45;animation:orbFloat 8s ease-in-out infinite}
+.hero:before{width:180px;height:180px;background:#b6e7c4;right:-45px;top:25px}
+.hero:after{width:100px;height:100px;background:#ffe59a;left:-25px;bottom:10px;animation-delay:-3s}
+.hero-grid{position:relative;z-index:1}
+.store-card{transform-style:preserve-3d;transition:transform .25s ease,box-shadow .3s ease;will-change:transform;animation:cardEnter .9s cubic-bezier(.2,.8,.2,1) both}
+.store-card:hover{box-shadow:0 32px 70px rgba(23,107,58,.23)}
+.store-emoji img{object-fit:contain;filter:drop-shadow(0 12px 10px #0002);animation:productBob 3s ease-in-out infinite}
+.btn,.info,.product,.review,.gallery-item{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.btn:hover{transform:translateY(-4px) scale(1.02)}
+.info:hover,.product:hover,.review:hover{transform:translateY(-7px) rotateX(2deg);box-shadow:0 18px 38px rgba(16,37,26,.13)}
+.product{transform-style:preserve-3d;perspective:800px}
+.product-img{transition:transform .35s ease;background:linear-gradient(145deg,#fff,#eef8f0)}
+.product:hover .product-img{transform:translateZ(16px) rotate(-3deg) scale(1.04)}
+.product-img{animation:softPulse 5s ease-in-out infinite}
+.gallery-item{overflow:hidden;position:relative}
+.gallery-item:hover{transform:translateY(-6px) scale(1.015)}
+.reveal{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0) scale(1)}
+.reveal.delay-1{transition-delay:.08s}.reveal.delay-2{transition-delay:.16s}.reveal.delay-3{transition-delay:.24s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-18px,18px)}}
+@keyframes productBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes softPulse{0%,100%{box-shadow:0 0 0 0 #159c4d00}50%{box-shadow:0 0 0 5px #159c4d08}}
+@keyframes cardEnter{from{opacity:0;transform:perspective(900px) rotateY(10deg) translateY(24px)}to{opacity:1;transform:perspective(900px) rotateY(0) translateY(0)}}
+@media(max-width:650px){.hero{padding:52px 0 45px}.hero:before{width:110px;height:110px}.store-card{padding:24px}.reveal{transform:translateY(18px)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+
+/* Colorful shop-inspired motion layer */
+body{background:linear-gradient(135deg,#f2fbfc,#fff8e8,#f5f0ff);background-size:240% 240%;animation:shopBackground 18s ease infinite}
+@keyframes shopBackground{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+header{background:rgba(255,255,255,.9);border-bottom:3px solid transparent;border-image:linear-gradient(90deg,#00c2c7,#ffb323,#ff4e36,#00c2c7) 1}
+.logo-icon,.menu-btn,.btn-primary,.add{background:linear-gradient(135deg,#00c2c7,#078caa);box-shadow:0 8px 18px #00aeb52e}
+.hero{position:relative;background:linear-gradient(125deg,#d8fbf5,#fff0cf,#ffe5e0,#e5e9ff);background-size:300% 300%;animation:heroColorFlow 14s ease infinite}
+@keyframes heroColorFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero:before,.hero:after{content:"";position:absolute;pointer-events:none;border-radius:50%;filter:blur(1px);opacity:.45;animation:shopOrb 9s ease-in-out infinite alternate}
+.hero:before{width:180px;height:180px;right:4%;top:8%;background:radial-gradient(circle,#ffbd42,transparent 70%)}
+.hero:after{width:140px;height:140px;left:2%;bottom:3%;background:radial-gradient(circle,#28d6d0,transparent 70%);animation-delay:-4s}
+@keyframes shopOrb{from{transform:translate3d(0,0,0) scale(.9)}to{transform:translate3d(20px,-24px,0) scale(1.15)}}
+.hero-grid{position:relative;z-index:1;perspective:1200px}
+.store-card{border:1px solid #ffffffcc;background:linear-gradient(145deg,#fff,#f0ffff);transform-style:preserve-3d;animation:storeCardFloat 5s ease-in-out infinite;box-shadow:0 30px 70px #007d8b2b}
+@keyframes storeCardFloat{0%,100%{translate:0 0;box-shadow:0 24px 50px #007d8b20}50%{translate:0 -9px;box-shadow:0 34px 65px #007d8b35}}
+.store-emoji img{border-radius:24px;filter:drop-shadow(0 12px 10px #005a6629);animation:shopIconBob 3.5s ease-in-out infinite;transform-style:preserve-3d}
+@keyframes shopIconBob{0%,100%{transform:translateY(0) rotateY(-7deg)}50%{transform:translateY(-7px) rotateY(7deg)}}
+.info,.product,.review,.gallery-item{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;transform-style:preserve-3d}
+.info:hover,.product:hover,.review:hover{transform:translateY(-8px) perspective(800px) rotateX(2deg);box-shadow:0 22px 42px #007d8b24;border-color:#7ce4e2}
+.product-img{background:linear-gradient(145deg,#d9ffff,#fff1d5);animation:softPulse 4s ease-in-out infinite}
+.section-title h2{background:linear-gradient(90deg,#008d9b,#00b7ad,#ff9e27);background-clip:text;-webkit-background-clip:text;color:transparent}
+.reviews{background:linear-gradient(120deg,#e1fbf6,#fff1d7,#f0eaff);background-size:200% 200%;animation:shopBackground 20s ease infinite}
+.map{background:linear-gradient(135deg,#c8f5ed,#ffedc1,#dfe6ff);background-size:200% 200%;animation:shopBackground 16s ease infinite}
+.cart{background:linear-gradient(135deg,#ffcf42,#ff8c32);animation:cartPulse 3s ease-in-out infinite}
+@keyframes cartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+#page-loader{background:radial-gradient(circle at 15% 20%,#ffe4a0,#c9fbf5 42%,#e9e4ff 75%,#fff)}
+.loader-icon,.loader-logo-icon{filter:drop-shadow(0 12px 12px #007d8b35)}
+@media(max-width:650px){.hero:before{width:100px;height:100px}.hero:after{width:90px;height:90px}.store-card{animation-duration:6s}.info:hover,.product:hover,.review:hover{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){body,.hero,.reviews,.map,.store-card,.store-emoji img,.cart{animation:none!important}}
+
+
+/* Midnight-blue shop theme with warm fire-spark accents */
+:root{--primary:#21d4dc;--secondary:#ff9f1c;--dark:#eaf7ff;--light:#07152f;--white:#10264a;--muted:#b8cbe4;--shadow:0 18px 42px rgba(0,0,0,.34)}
+body{background:#06132d;color:#eef7ff;background-image:radial-gradient(ellipse at 15% 10%,rgba(18,83,150,.42),transparent 42%),radial-gradient(ellipse at 85% 38%,rgba(8,54,110,.36),transparent 45%),linear-gradient(135deg,#050d22,#09224a 55%,#06142e);background-attachment:fixed}
+header{background:rgba(5,17,42,.9);border-bottom:1px solid rgba(74,211,255,.2);box-shadow:0 8px 28px #0005}
+.nav-links a{color:#e6f3ff}.nav-links a:hover{color:#ffb347}.menu-btn,.btn-primary,.add{background:linear-gradient(135deg,#00cbd4,#1689c7);color:#04152b}
+.logo{color:#47e5ed}.logo-icon{background:linear-gradient(135deg,#00cbd4,#1689c7);box-shadow:0 0 22px #00cbd455}
+.hero{background:linear-gradient(120deg,rgba(7,28,63,.92),rgba(8,48,83,.84),rgba(30,22,63,.9));background-size:250% 250%;animation:midnightShift 18s ease infinite;border-bottom:1px solid #36d9e52a}
+@keyframes midnightShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero p,.section-title p,.info p,.product p,.review p,.address p{color:#c3d5ec}
+.badge{background:#102c50;color:#ffbd59;border:1px solid #ffad3938}.store-card,.info,.product,.review{background:linear-gradient(145deg,rgba(17,43,79,.96),rgba(8,25,52,.97));color:#f2f8ff;border:1px solid rgba(77,208,236,.18);box-shadow:0 18px 45px #0005}
+.store-card{transform-style:preserve-3d;animation:cardFloat 5s ease-in-out infinite}.store-emoji img{filter:drop-shadow(0 0 20px #00dce955)}
+@keyframes cardFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+section{position:relative;isolation:isolate}section:not(.hero){background:transparent}.products{background:linear-gradient(180deg,rgba(8,28,59,.8),rgba(6,19,45,.96))!important}.reviews{background:linear-gradient(135deg,rgba(11,43,77,.86),rgba(23,26,63,.86))!important}
+.product{transition:transform .35s,box-shadow .35s,border-color .35s}.product:hover,.info:hover,.review:hover{transform:translateY(-8px) rotateX(2deg);border-color:#ffad45;box-shadow:0 20px 42px #0007,0 0 18px #ff9e2420}
+.product-img{background:linear-gradient(145deg,#0d3861,#0c244a);box-shadow:inset 0 0 20px #00dce51c}.price{color:#ffbd59}.section-title h2{color:#f2f8ff}.address{background:linear-gradient(145deg,#0b2c56,#101b42);border:1px solid #39d8e633}.map{background:linear-gradient(135deg,#123a61,#17254d,#342447);color:#f4f7ff;border:1px solid #42d9e533}.btn-secondary{background:#10284c;color:#effaff;border:1px solid #43d9e555}.btn-secondary:hover{background:#173b67}footer{background:#030a19;color:#c5d8ef;border-top:1px solid #1f5476}.cart{box-shadow:0 0 25px #ff9e2e45}
+#page-loader{background:radial-gradient(circle at 50% 35%,#123c70,#07152f 62%,#030916)!important;color:#f5fbff!important;z-index:9999}#page-loader .loader-title{color:#55eaf0}#page-loader .loader-sub{color:#c2d7ee}#page-loader .loader-track{background:#1b3458}#page-loader .loader-track span{background:linear-gradient(90deg,#00dce5,#ff9e2e,#ff4f3d)}
+#fire-sparks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;opacity:.78}header,.cart,.toast,#page-loader{position:relative;z-index:1000}#page-loader{z-index:9999}header{position:sticky}.cart{position:fixed}.toast{position:fixed}
+@media(max-width:650px){.nav-links{background:#081a39;border:1px solid #2b6683}.nav-links a{color:#f2f8ff}#fire-sparks{opacity:.48}}
+@media(prefers-reduced-motion:reduce){.hero,.store-card,body{animation:none!important}#fire-sparks{display:none}}
+
+
+/* Final requested look: black shop theme, Aptos typography, animated storefront hero */
+:root{--primary:#20e0e8;--secondary:#ffad35;--dark:#f5f8ff;--light:#05070d;--white:#101521;--muted:#bdc6d7;--shadow:0 18px 50px #0009}
+html,body{background:#03050a;color:#f5f7fc;font-family:Aptos,"Aptos Display","Segoe UI",Arial,sans-serif}
+body{background-image:radial-gradient(ellipse at 12% 5%,#102b48 0,transparent 38%),radial-gradient(ellipse at 88% 30%,#21152b 0,transparent 36%),linear-gradient(150deg,#020307,#080d18 55%,#03050a);background-attachment:fixed}
+header{background:rgba(3,5,10,.93);border-bottom:1px solid #20e0e84a;backdrop-filter:blur(18px)}
+.logo-icon{background:linear-gradient(135deg,#ffcf45 0%,#ff7043 35%,#20e0e8 70%,#8b5cf6 100%)!important;color:#fff!important;border:2px solid #fff3;box-shadow:0 0 22px #20e0e855, inset 0 0 10px #ffffff33}.logo-icon{font-size:25px;text-shadow:0 2px 4px #001!important}.nav-links a{color:#f1f5ff}.nav-links a:hover{color:#ffad35}.logo{color:#20e0e8}.logo-icon{background:linear-gradient(145deg,#20e0e8,#087bb5)}
+.hero{background:linear-gradient(120deg,#03050aee,#07172cee,#160d21ed);background-size:220% 220%;animation:midnightShift 12s ease infinite;min-height:590px;display:flex;align-items:center}
+.hero p,.section-title p,.info p,.product p,.review p,.address p{color:#c1cce0}
+.badge{background:#101b2b;color:#ffca70;border:1px solid #ffad3544}.store-card,.info,.product,.review{background:linear-gradient(145deg,#111a2b,#080d17);border:1px solid #20e0e82b;color:#f6f8ff;box-shadow:0 20px 48px #0008}
+.store-card{padding:22px;overflow:hidden}.shop-scene{font-size:initial;margin:0 auto 12px;width:100%;max-width:500px;perspective:900px}.shop-art{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 15px 22px #00dce522);animation:shopVideoFloat 5s ease-in-out infinite;transform-origin:center}.scene-caption{font-family:Aptos,"Segoe UI",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.19em;color:#ffbd62;margin-top:0;animation:signGlow 2.8s ease-in-out infinite}
+.shop-building{transform-origin:center;animation:storeBreath 5s ease-in-out infinite}.shop-sign{animation:signGlow 2.8s ease-in-out infinite}.floating-goods{animation:goodsFloat 4s ease-in-out infinite}
+@keyframes shopVideoFloat{0%,100%{transform:translateY(0) rotateX(0) scale(1)}50%{transform:translateY(-7px) rotateX(2deg) scale(1.015)}}@keyframes storeBreath{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}@keyframes signGlow{0%,100%{filter:drop-shadow(0 0 2px #ff9e2e);opacity:.88}50%{filter:drop-shadow(0 0 10px #20e0e8);opacity:1}}@keyframes goodsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+section{background:transparent!important}.products,.reviews{background:linear-gradient(180deg,#080d17cc,#03050aee)!important}.section-title h2{color:#f4f7ff;background:none;-webkit-text-fill-color:initial}.info-icon{filter:drop-shadow(0 0 8px #20e0e844)}.product-img{background:linear-gradient(145deg,#14253b,#080d17);border:1px solid #20e0e822}.price{color:#ffbd62}.address{background:linear-gradient(145deg,#102744,#090d19);border:1px solid #20e0e844}.map{background:linear-gradient(135deg,#0d2540,#17142b,#090d19);color:#f5f8ff;border:1px solid #20e0e844}.btn-primary{color:#021018;background:linear-gradient(135deg,#35edf0,#1688c8)}.btn-secondary{background:#101827;color:#ffffff!important;border:1px solid #20e0e866}.address .btn-secondary,.address .btn-secondary:visited{color:#ffffff!important}.address .btn-secondary:hover{color:#ffffff!important;background:#173b67}.cart{color:#17100a}footer{background:#010205;border-top:1px solid #20e0e833}.reveal{will-change:opacity,transform}
+#page-loader{background:radial-gradient(circle at 50% 35%,#102c49,#05070d 60%,#010205)!important}#page-loader .loader-title{font-family:Aptos,"Segoe UI",sans-serif;color:#20e0e8;letter-spacing:.1em}#page-loader .loader-sub{color:#d2d9e8}#page-loader .loader-basket{background:linear-gradient(145deg,#20e0e8,#1265a0);box-shadow:0 0 35px #20e0e855}#page-loader .loader-track{background:#1a263a}#page-loader .loader-track span{background:linear-gradient(90deg,#20e0e8,#ffad35,#ff4d37)}
+#fire-sparks{z-index:2;opacity:.68}header,.cart,.toast{z-index:1000}.hero-grid{z-index:3}.store-card{position:relative;z-index:3}
+@media(max-width:650px){.hero{min-height:0}.shop-art{max-height:290px}.scene-caption{font-size:.58rem;letter-spacing:.12em}.nav-links{background:#070c16;border:1px solid #20e0e844}.nav-links a{color:#f5f8ff}}
+@media(prefers-reduced-motion:reduce){.shop-art,.shop-building,.shop-sign,.floating-goods,.scene-caption{animation:none!important}}
+
+
+/* Final requested adjustments */
+.logo-icon{background:#000!important;color:#20e0e8!important;border:1px solid #20e0e8!important;box-shadow:0 0 16px #20e0e855!important}
+.btn-secondary{background:linear-gradient(135deg,#00c2c7,#078caa)!important;color:#fff!important;border:1px solid #00c2c7!important;box-shadow:0 8px 18px #00aeb52e!important}
+.btn-secondary:hover,.btn-primary:hover{filter:brightness(1.12);transform:translateY(-3px)}
+#page-loader{display:none!important}
+
+/* Home intro reveal animation */
+.hero .badge,.hero h1,.hero p,.hero .actions,.hero .store-card{opacity:0;animation:homeReveal .85s cubic-bezier(.2,.75,.25,1) forwards}
+.hero .badge{animation-delay:.08s}.hero h1{animation-delay:.2s}.hero p{animation-delay:.34s}.hero .actions{animation-delay:.48s}.hero .store-card{animation-delay:.25s}
+@keyframes homeReveal{0%{opacity:0;transform:translateY(26px) scale(.975);filter:blur(5px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+/* Grey matching CTA buttons */
+.hero .actions .btn-primary,.hero .actions .btn-secondary{background:linear-gradient(145deg,#555b65,#343a44);color:#fff;border:1px solid #737b86;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.hero .actions .btn-primary:hover,.hero .actions .btn-secondary:hover{background:linear-gradient(145deg,#6b737f,#414852);box-shadow:0 12px 26px rgba(0,0,0,.3);transform:translateY(-3px)}
+/* Location signal waves */
+.location-signal{position:relative;width:100px;height:100px;margin:0 auto 12px;display:grid;place-items:center}
+.location-signal .pin{position:relative;z-index:2;font-size:48px;filter:drop-shadow(0 4px 9px rgba(0,0,0,.2));animation:pinBounce 2s ease-in-out infinite}
+.location-signal:before,.location-signal:after{content:"";position:absolute;inset:15px;border:3px solid #12c9d2;border-radius:50%;animation:signalWave 2.2s ease-out infinite}
+.location-signal:after{animation-delay:1.1s}
+@keyframes signalWave{0%{transform:scale(.35);opacity:.95}100%{transform:scale(1.45);opacity:0}}
+@keyframes pinBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.hero .badge,.hero h1,.hero p,.hero .actions,.hero .store-card{opacity:1;animation:none}.location-signal:before,.location-signal:after,.location-signal .pin{animation:none}}
+
+</style>
+</head>
+<body>
+<canvas id="fire-sparks" aria-hidden="true"></canvas>
+
+
+
+
+<header>
+<div class="container nav">
+<a class="logo" href="#home"><div class="logo-icon">🛒</div>CHELLAKANI STORE </a>
+<nav class="nav-links" id="navLinks">
+<a href="#home">Home</a><a href="#storeinfo">Store Information</a><a href="#products">Products</a><a href="#reviews">Reviews</a><a href="#location">Location</a><a href="#contact">Contact</a>
+</nav>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="badge">⭐ 4.9 Rating for Reviews</div>
+<h1>Your Local <span>Grocery Store</span> in Vanapuram</h1>
+<p>Welcome to <strong>CHELLAKANI STORE</strong> — Your convenient neighborhood grocery store on Thachempattu Road, Vanapuram. Quality products and friendly service for your everyday needs.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#products">🛒 Explore Products</a>
+<a class="btn btn-secondary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chellakani+Store%2C+Thachempattu+Road%2C+Vanapuram%2C+Tamil+Nadu+606753">📍 Get Directions</a>
+</div>
+</div>
+<div class="store-card">
+<div class="store-emoji shop-scene" aria-label="Animated Chellakani Store illustration">
+<svg class="shop-art" viewBox="0 0 520 360" role="img" aria-label="Colorful grocery storefront" xmlns="http://www.w3.org/2000/svg">
+ <defs><linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18385d"/><stop offset="1" stop-color="#071326"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#14d8dc"/><stop offset="1" stop-color="#0876a7"/></linearGradient><linearGradient id="awning" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffcf52"/><stop offset="1" stop-color="#ff702e"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+ <ellipse cx="260" cy="324" rx="205" ry="20" fill="#00cbd4" opacity=".15"/>
+ <g class="shop-building"><rect x="65" y="105" width="390" height="205" rx="9" fill="url(#wall)" stroke="#5be9f0" stroke-width="4"/><rect x="92" y="190" width="112" height="120" rx="5" fill="url(#glass)" stroke="#eafcff" stroke-width="5"/><rect x="226" y="190" width="198" height="91" rx="6" fill="url(#glass)" stroke="#eafcff" stroke-width="5"/><path d="M48 111 L80 48 Q82 42 92 42 H428 Q438 42 440 51 L472 111 Z" fill="url(#awning)" stroke="#07101e" stroke-width="8" stroke-linejoin="round"/><path d="M80 110 H440" stroke="#f7fbff" stroke-width="7"/><path d="M104 49 L82 108 M158 49 L146 108 M212 49 L210 108 M266 49 L274 108 M320 49 L338 108 M374 49 L402 108" stroke="#071326" stroke-width="7"/><path d="M55 112 H465 V136 Q465 162 440 162 Q415 162 415 136 Q415 162 390 162 Q365 162 365 136 Q365 162 340 162 Q315 162 315 136 Q315 162 290 162 Q265 162 265 136 Q265 162 240 162 Q215 162 215 136 Q215 162 190 162 Q165 162 165 136 Q165 162 140 162 Q115 162 115 136 Q115 162 90 162 Q65 162 65 136 Z" fill="#ff4d37" stroke="#07101e" stroke-width="7" stroke-linejoin="round"/><path d="M115 136 Q115 162 90 162 Q65 162 65 136 M215 136 Q215 162 190 162 Q165 162 165 136 M315 136 Q315 162 290 162 Q265 162 265 136 M415 136 Q415 162 390 162 Q365 162 365 136" fill="#f3f7ff"/><rect x="45" y="306" width="430" height="24" rx="8" fill="#63728b" stroke="#07101e" stroke-width="6"/></g>
+ <g class="shop-sign" filter="url(#glow)"><rect x="148" y="12" width="224" height="31" rx="10" fill="#071326" stroke="#24e4ec" stroke-width="2"/><text x="260" y="32" font-size="13" font-family="Aptos,Arial,sans-serif" font-weight="900" text-anchor="middle" fill="#f7fdff" letter-spacing="1.1">CHELLAKANI STORE</text></g>
+ <g class="floating-goods"><circle cx="54" cy="208" r="20" fill="#ffb52e"/><text x="54" y="216" text-anchor="middle" font-size="23">🍊</text><circle cx="467" cy="220" r="20" fill="#20d7cf"/><text x="467" y="228" text-anchor="middle" font-size="23">🥬</text><circle cx="434" cy="36" r="16" fill="#ff8d35"/><text x="434" y="42" text-anchor="middle" font-size="17">✦</text></g>
+</svg><div class="scene-caption">CHELLAKANI STORE · YOUR NEIGHBOURHOOD GROCERY STORE</div></div>
+<h2>CHELLAKANI STORE</h2>
+<p>Thachempattu Road · Vanapuram</p>
+<div class="rating">★★★★★ <span>4.9(Rating)</span></div>
+<p style="margin-top:12px;color:#65736b">🕙 Shop Open at 7:00 AM and Close at 10:00 PM</p>
+</div>
+</div>
+</section>
+
+<section id="storeinfo">
+<div class="container">
+<div class="section-title"><h2>Store Information</h2><p>Everything you need to know before visiting.</p></div>
+<div class="info-grid">
+<div class="info"><div class="info-icon">📍</div><h3>Location</h3><p>Thachempattu Road, Vanapuram, Tamil Nadu 606753</p></div>
+<div class="info"><div class="info-icon">🛒</div><h3>Store Type</h3><p>Grocery store for everyday shopping needs.</p></div>
+<div class="info"><div class="info-icon">🕙</div><h3>Opening Hours</h3><p>Every Day Shop Open at 7.00 AM to Close at 10:00 PM</p></div>
+<div class="info"><div class="info-icon">📹</div><h3>Camera Facilities</h3><p>Camera facilities available at the store.</p></div>
+</div>
+</div> 
+</section>
+
+<section class="products" id="products">
+<div class="container">
+<div class="section-title"><h2>Popular Grocery Categories</h2><p>Best Product For sample categories.</div>
+<div class="product-grid" id="productGrid"></div>
+</div>
+</section>
+
+<section class="reviews" id="reviews">
+<div class="container">
+<div class="section-title"><h2>Customer Reviews</h2><p>What customers say about CHELLAKANI STORE</p></div>
+<div class="review-grid">
+<div class="review"><div class="stars">★★★★★</div><p>“Quality product and Excellent Service”</p></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Friendly Serve the Grocery things 😇”</p></div>
+</div>
+</div>
+</section>
+
+
+
+<section id="location">
+<div class="container">
+<div class="section-title"><h2>Visit CHELLAKANI STORE</h2><p>Find us on Thachempattu Road, Vanapuram.</p></div>
+<div class="location-card" >
+<div class="address">
+<h2>📍 Store Address</h2>
+<p>Chellakani Store, Thachempattu Road,<br> Vanapuram, Tiruvannamalai <br>Tamil Nadu 606753</p>
+<a class="btn btn-secondary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chellakani+Store%2C+Thachempattu+Road%2C+Vanapuram%2C+Tamil+Nadu+606753" style="color:#ffffff!important">Open in Google Maps</a>
+</div>
+<div class="map">
+<div><div class="location-signal" aria-label="Location signal animation"><span class="pin">📍</span></div><h2>4239+QM Vanapuram</h2><p>Thachempattu Road, Vanapuram</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+<div class="container">
+<div class="section-title"><h2>Contact & Visit</h2><p>Plan your grocery visit today.</p></div>
+<div class="actions" style="justify-content:center">
+<a class="btn btn-primary">📞Phone: 9626461930</a>
+<a class="btn btn-primary">📞Phone: 9047605607</a>
+</div>
+</div>
+</section>
+</main>
+
+
+
+<footer>
+<div class="container footer-grid">
+<div><strong>🛒 CHELLAKANI STORE</strong><br><span>Thachempattu Road, Vanapuram · Tamil Nadu 606753</span></div>
+<div>© <span id="year"></span> CHELLAKANI STORE</div>
+</div>
+</footer>
+
+<script>
+const products=[
+{name:"Rice & Grains",icon:"🍚",desc:"Rice, pulses and essential grains"},
+{name:"Cooking Essentials",icon:"🫙",desc:"Oil, spices and kitchen essentials"},
+{name:"Snacks",icon:"🍪",desc:"Biscuits, chocholate, chips and tasty snacks"},
+{name:"Beverages",icon:"🥤",desc:"Refreshing drinks and beverages"},
+{name:"Dairy Products",icon:"🥛",desc:"Milk and everyday dairy items"},
+{name:"Personal Care",icon:"🧴",desc:"Daily personal care essentials"},
+{name:"Household Items",icon:"🧹",desc:"Cleaning and household products"},
+{name:"Packaged Foods",icon:"🥫",desc:"Convenient packaged grocery items"},
+{name:"School Stationery",icon:"🎒",desc:"School bags and essential stationery"},
+{name:"Vegetables",icon:"🥕",desc:"Carrat, Beans, Brinjal and Etc..."},
+{name:"Electronics",icon:"💡",desc:"Torch Light, Bulb and Tubelight"},
+{name:"Cow Feed Food",icon:"🐄",desc:"Oil Cake, Black Gram Husk and Rice Bran"},
+
+];
+let cart=0;
+function renderProducts(list=products){
+const grid=document.getElementById("productGrid");
+grid.innerHTML=list.map((p,i)=>`<article class="product"><div class="product-img">${p.icon}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="product-bottom"><span class="price">Value for price</span></div></article>`).join("");
+}
+function filterProducts(){
+const searchInput=document.getElementById("search");
+ const q=searchInput ? searchInput.value.toLowerCase() : "";
+renderProducts(products.filter(p=>(p.name+" "+p.desc).toLowerCase().includes(q)));
+}
+
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open")}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();
+
+// Scroll reveal: sections and cards animate in as they enter the viewport.
+const revealTargets=document.querySelectorAll("main section, .info, .product, .review, .address, .map, footer .container");
+revealTargets.forEach((el,index)=>{
+  el.classList.add("reveal");
+  if(index%4===1) el.classList.add("delay-1");
+  if(index%4===2) el.classList.add("delay-2");
+  if(index%4===3) el.classList.add("delay-3");
+});
+if("IntersectionObserver" in window){
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:"0px 0px -35px 0px"});
+  revealTargets.forEach(el=>revealObserver.observe(el));
+}else{
+  revealTargets.forEach(el=>el.classList.add("is-visible"));
+}
+
+// Subtle pointer-driven 3D tilt on the hero store card (desktop only).
+const storeCard=document.querySelector(".store-card");
+if(storeCard && window.matchMedia("(pointer:fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  storeCard.addEventListener("pointermove",event=>{
+    const r=storeCard.getBoundingClientRect();
+    const x=(event.clientX-r.left)/r.width;
+    const y=(event.clientY-r.top)/r.height;
+    storeCard.style.transform=`perspective(900px) rotateX(${(0.5-y)*8}deg) rotateY(${(x-0.5)*10}deg)`;
+  });
+  storeCard.addEventListener("pointerleave",()=>{storeCard.style.transform="";});
+}
+</script>
+<script>
+
+// Lightweight, mobile-aware ember/spark animation; no external libraries required.
+(()=>{const canvas=document.getElementById('fire-sparks');if(!canvas||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const ctx=canvas.getContext('2d');let w=0,h=0,dpr=1,embers=[];function resize(){dpr=Math.min(window.devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);embers=Array.from({length:w<600?26:55},()=>spawn(true))}function spawn(initial=false){return{x:Math.random()*w,y:initial?Math.random()*h:h+Math.random()*50,vx:(Math.random()-.5)*.65,vy:-(.45+Math.random()*1.45),r:.7+Math.random()*2.1,life:Math.random(),max:.55+Math.random()*.8,hue:Math.random()<.7?Math.random()*24:35}}function frame(){ctx.clearRect(0,0,w,h);for(let i=0;i<embers.length;i++){let p=embers[i];p.x+=p.vx+Math.sin(p.life*8)*.25;p.y+=p.vy;p.life+=.006+(p.r*.001);let alpha=Math.max(0,1-p.life/p.max);if(p.y<-15||alpha<=0)embers[i]=spawn();else{ctx.beginPath();ctx.fillStyle=`hsla(${p.hue},100%,${p.hue<28?62:70}%,${alpha*.85})`;ctx.shadowBlur=10;ctx.shadowColor=p.hue<28?'#ff5a24':'#ffbd45';ctx.arc(p.x,p.y,p.r*alpha,0,Math.PI*2);ctx.fill()}}ctx.shadowBlur=0;requestAnimationFrame(frame)}window.addEventListener('resize',resize,{passive:true});resize();frame()})();
+
+</script>
+</body>
+</html>
